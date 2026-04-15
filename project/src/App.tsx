@@ -5,11 +5,13 @@ import AboutPage from "./pages/AboutPage";
 import UsersPage from "./pages/UsersPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UserDetail from "./pages/UserDetail";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
     <BrowserRouter>
       <div>
+        <Navigation />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />

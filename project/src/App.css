@@ -78,3 +78,20 @@ ul {
     }
   }
 }
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  & a {
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--text-h);
+    }
+  }
+}
