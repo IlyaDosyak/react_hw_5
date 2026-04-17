@@ -1,5 +1,7 @@
+import Users from "../components/Users";
+
 const UsersPage = () => {
-  return <div>UsersPage</div>;
+  return <Users />;
 };
 
 export default UsersPage;

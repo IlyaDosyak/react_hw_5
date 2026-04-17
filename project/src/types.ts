@@ -3,6 +3,7 @@ export type PostType = {
   title: string;
   content: string;
 };
+
 export type UserType = {
   id: number;
   name: string;

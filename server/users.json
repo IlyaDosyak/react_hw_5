@@ -5,11 +5,6 @@
     "email": "alexey@example.com"
   },
   {
-    "id": 2,
-    "name": "Мария Петрова",
-    "email": "maria@example.com"
-  },
-  {
     "id": 3,
     "name": "Дмитрий Сидоров",
     "email": "dmitry@example.com"

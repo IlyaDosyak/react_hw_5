@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <nav>
-      <Link to="/">Главная</Link>
-      <Link to="/about">О нас</Link>
-      <Link to="/users">Пользователи</Link>
+    <nav className="nav">
+      <NavLink to="/">Главная</NavLink>
+      <NavLink to="/users">Пользователи</NavLink>
+      <NavLink to="/posts">Посты</NavLink>
     </nav>
   );
 };

@@ -20,6 +20,16 @@ export function usePosts(limit: number = 3) {
       .finally(() => setLoading(false));
   }, [limit]);
 
+  const getPost = async (id: number): Promise<PostType | null> => {
+    try {
+      const res = await axios.get<PostType>(`${API_URL}/${id}`, { auth });
+      return res.data;
+    } catch (err) {
+      setError(`Ошибка получения поста: ${err}`);
+      return null;
+    }
+  };
+
   const createPost = async (newPost: Omit<PostType, "id">) => {
     try {
       const res = await axios.post<PostType>(API_URL, newPost, { auth });
@@ -47,5 +57,5 @@ export function usePosts(limit: number = 3) {
     }
   };
 
-  return { posts, loading, error, createPost, updatePost, deletePost };
+  return { posts, loading, error, createPost, updatePost, deletePost, getPost };
 }

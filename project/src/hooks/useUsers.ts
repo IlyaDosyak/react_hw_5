@@ -20,6 +20,16 @@ export function useUsers() {
       .finally(() => setLoading(false));
   }, []);
 
+  const getUser = async (id: number): Promise<UserType | null> => {
+    try {
+      const res = await axios.get<UserType>(`${API_URL}/${id}`, { auth });
+      return res.data;
+    } catch (err) {
+      setError(`Ошибка получения пользователя: ${err}`);
+      return null;
+    }
+  };
+
   const createUser = async (newUser: Omit<UserType, "id">) => {
     try {
       const res = await axios.post<UserType>(API_URL, newUser, { auth });
@@ -47,5 +57,13 @@ export function useUsers() {
     }
   };
 
-  return { users, loading, error, createUser, updateUser, deleteUser };
+  return {
+    users,
+    loading,
+    error,
+    createUser,
+    updateUser,
+    deleteUser,
+    getUser,
+  };
 }

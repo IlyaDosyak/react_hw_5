@@ -1,24 +1,52 @@
 .container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 1rem 0.5rem;
+}
+
+.grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  place-items: center;
-  min-height: 100vh;
+  gap: 0.5rem;
+
+  & .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  & a {
+    justify-self: end;
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: #6b6b6b;
+    border-radius: 0.5rem;
+    color: var(--text-h);
+
+    &:hover {
+      background: #8c8c8c;
+    }
+
+    &:visited {
+      color: var(--text-h);
+    }
+  }
+
+  & .backButton {
+    justify-self: start;
+  }
 }
 
 button {
   padding: 0.5rem 1rem;
 }
 
-.column {
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 1rem;
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
   box-shadow: var(--shadow);
-
-  & hr {
-    margin-inline: -1rem;
-  }
 }
 
 .form {
@@ -50,9 +78,8 @@ ul {
   list-style: none;
   display: grid;
   gap: 0.5rem;
-  border: 1px solid var(--border);
-  border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0;
+  margin: 0;
 
   & li {
     display: flex;
@@ -62,36 +89,33 @@ ul {
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     padding: 0.5rem;
+    box-shadow: var(--shadow);
 
     & p {
       display: block;
       text-align: start;
     }
-
-    & div {
-      display: grid;
-      gap: 0.2rem;
-    }
-
-    & button {
-      padding: 1px 6px;
-    }
   }
 }
 
-nav {
+.nav {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
 
   & a {
-    color: var(--text);
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+    padding: 0.5rem 1rem;
+    border-bottom: 1px solid transparent;
 
     &:hover {
       color: var(--text-h);
+      border-bottom: 1px solid var(--text-h);
+    }
+
+    &.active {
+      color: var(--text-h);
+      border-bottom: 1px solid var(--text-h);
     }
   }
 }

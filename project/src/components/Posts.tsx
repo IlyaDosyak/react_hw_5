@@ -1,25 +1,32 @@
 import Post from "./Post";
 import { useState } from "react";
 import { usePosts } from "../hooks/usePosts";
+// import { Link } from "react-router-dom";
 
 const Posts = () => {
   const [limit, setLimit] = useState<number>(3);
-  
-  const { posts, loading, error, createPost, updatePost, deletePost } =
-    usePosts(limit);
 
-  const [title, setTitle] = useState<string>("");
-  const [content, setContent] = useState<string>("");
+  const { posts, loading, error, updatePost, deletePost } = usePosts(limit);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  // const [title, setTitle] = useState<string>("");
+  // const [content, setContent] = useState<string>("");
+
+  if (loading)
+    return (
+      <div className="container">
+        <h1>Loading...</h1>
+      </div>
+    );
+  if (error)
+    return (
+      <div className="container">
+        <h1>Error: {error}</h1>
+      </div>
+    );
 
   return (
-    <div className="column">
-      <h2>Список Постов: {limit}</h2>
-      <hr />
-
-      <form className="form">
+    <div className="container grid">
+      {/* <form className="form">
         <div>
           <label htmlFor="title">Заголовок:</label>
           <input
@@ -54,8 +61,9 @@ const Posts = () => {
         >
           Добавить пост
         </button>
-      </form>
+      </form> */}
 
+      {/* <Link to={"/"}>Добавить пост</Link> */}
       <ul>
         {posts.map((p) => (
           <Post

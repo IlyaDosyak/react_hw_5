@@ -1,23 +1,29 @@
-import { useState } from "react";
 import { useUsers } from "../hooks/useUsers";
 import User from "./User";
+// import { Link } from "react-router-dom";
 
 const Users = () => {
-  const { users, loading, error, createUser, deleteUser, updateUser } =
-    useUsers();
+  const { users, loading, error, deleteUser, updateUser } = useUsers();
 
-  const [name, setName] = useState<string>("");
-  const [email, setEmail] = useState<string>("");
+  // const [name, setName] = useState<string>("");
+  // const [email, setEmail] = useState<string>("");
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (loading)
+    return (
+      <div className="container">
+        <h1>Loading...</h1>
+      </div>
+    );
+  if (error)
+    return (
+      <div className="container">
+        <h1>Error: {error}</h1>
+      </div>
+    );
 
   return (
-    <div className="column">
-      <h2>Список Пользователей:</h2>
-      <hr />
-
-      <form className="form">
+    <div className="container grid">
+      {/* <form className="form">
         <div>
           <label htmlFor="name">Имя:</label>
           <input
@@ -51,7 +57,11 @@ const Users = () => {
         >
           Добавить пользователя
         </button>
-      </form>
+      </form> */}
+
+      {/* <Link to={"/"} className="addButton">
+        Добавить пользователя
+      </Link> */}
 
       <ul className="users">
         {users.map((u) => (

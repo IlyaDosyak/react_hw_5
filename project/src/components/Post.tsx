@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { PostType } from "../types";
 
 function Post({
@@ -14,15 +15,13 @@ function Post({
     <li>
       <p>
         {id}. {title}
-        <br />
-        {content}
       </p>
-      <div>
-        <button onClick={() => updatePost(id, { title: "Обновленный пост" })}>
+
+      <Link to={`/posts/${id}`}>Подробнее</Link>
+      {/* <button onClick={() => updatePost(id, { title: "Обновленный пост" })}>
           Обновить
         </button>
-        <button onClick={() => deletePost(id)}>Удалить</button>
-      </div>
+        <button onClick={() => deletePost(id)}>Удалить</button> */}
     </li>
   );
 }

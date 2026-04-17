@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import type { UserType } from "../types";
 
 const User = ({
@@ -14,14 +15,18 @@ const User = ({
     <li>
       <p>
         {id}. {name}
-        <br />({email})
       </p>
-      <div>
-        <button onClick={() => updateUser(id, { name: "NEW" })}>
-          Обновить
+
+      <Link to={`/users/${id}`}>Подробнее</Link>
+      {/* <button
+          className="button"
+          onClick={() => updateUser(id, { name: "NEW" })}
+        >
+          Редактировать
         </button>
-        <button onClick={() => deleteUser(id)}>Удалить</button>
-      </div>
+        <button className="button" onClick={() => deleteUser(id)}>
+          Удалить
+        </button> */}
     </li>
   );
 };
