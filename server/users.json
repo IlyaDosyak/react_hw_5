@@ -1,8 +1,8 @@
 [
   {
-    "id": 1,
-    "name": "NEW",
-    "email": "alexey@example.com"
+    "id": 2,
+    "name": "Мария Петрова",
+    "email": "maria@example.com"
   },
   {
     "id": 3,
@@ -10,18 +10,8 @@
     "email": "dmitry@example.com"
   },
   {
-    "id": 4,
-    "name": "Анна Козлова",
-    "email": "anna@example.com"
-  },
-  {
     "id": 5,
-    "name": "NEW",
+    "name": "Сергей Новиков",
     "email": "sergey@example.com"
-  },
-  {
-    "id": 6,
-    "name": "НОВЫЙ Пользователь",
-    "email": "alexey@example.com"
   }
 ]

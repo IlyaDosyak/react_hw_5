@@ -32,14 +32,18 @@
       color: var(--text-h);
     }
   }
-
-  & .backButton {
-    justify-self: start;
-  }
 }
 
-button {
+.button {
   padding: 0.5rem 1rem;
+
+  &.back {
+    justify-self: start;
+  }
+
+  &.add {
+    justify-self: end;
+  }
 }
 
 header {
@@ -52,25 +56,46 @@ header {
 .form {
   display: grid;
   gap: 1rem;
-  border: 1px solid var(--border);
+
   border-radius: 0.5rem;
   padding: 1rem;
+
+  &.bordered {
+    border: 1px solid var(--border);
+  }
 
   & div {
     display: grid;
     grid-template-columns: 5rem 1fr;
     gap: 1rem;
+    align-items: center;
 
     & label {
       text-align: end;
+      vertical-align: middle;
     }
   }
 
   & button {
-    padding: 0.5rem 1rem;
     display: flex;
     place-items: center;
     place-content: center;
+  }
+
+  & input,
+  textarea {
+    padding: 0.5rem;
+    resize: none;
+
+    &:read-only {
+      background: transparent;
+      border-color: transparent;
+      cursor: default;
+
+      &:focus {
+        outline: none;
+      }
+    }
   }
 }
 
@@ -117,5 +142,15 @@ ul {
       color: var(--text-h);
       border-bottom: 1px solid var(--text-h);
     }
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  .button {
+    width: 100%;
   }
 }

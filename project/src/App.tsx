@@ -1,13 +1,12 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import "./App.css";
 import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
 import UsersPage from "./pages/UsersPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import UserDetail from "./pages/UserDetail";
 import Navigation from "./components/Navigation";
 import PostsPage from "./pages/PostsPage";
 import PostDetail from "./pages/PostDetail";
+import "./App.css";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
             <Route path="/users" element={<UsersPage />} />
             <Route path="/users/:id" element={<UserDetail />} />
             <Route path="/posts" element={<PostsPage />} />
